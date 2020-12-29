@@ -1,6 +1,7 @@
+push!(LOAD_PATH,"../src/")
 using CorrDCA
 using Documenter
-
+DocMeta.setdocmeta!(CorrDCA, :DocTestSetup, :(using CorrDCA); recursive=true)
 makedocs(;
     modules=[CorrDCA],
     authors="Andrea Pagnani",
