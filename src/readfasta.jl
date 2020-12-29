@@ -84,7 +84,7 @@ end
 Remove duplicate sequences (columns) in the alignment matrix `Z`
 
 # Examples
-```jldoctest
+```
 julia> Z = [1 2 3 1;
             1 3 2 1;]
 2×4 Array{Int64,2}:
