@@ -6,7 +6,7 @@ makedocs(;
     modules=[CorrDCA],
     authors="Andrea Pagnani",
     repo="https://github.com/pagnani/CorrDCA.jl/blob/{commit}{path}#L{line}",
-    sitename="CorrDCA.jl",
+    sitename="CorrDCA",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://pagnani.github.io/CorrDCA",
