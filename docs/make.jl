@@ -9,7 +9,7 @@ makedocs(;
     sitename="CorrDCA.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://pagnani.github.io/CorrDCA.jl",
+        canonical="https://pagnani.github.io/CorrDCA",
         assets=String[],
     ),
     pages=[
@@ -18,5 +18,5 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/pagnani/CorrDCA.jl",
+    repo="github.com/pagnani/CorrDCA",
 )
