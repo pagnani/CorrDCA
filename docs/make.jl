@@ -5,7 +5,7 @@ using Documenter
 makedocs(;
     modules=[CorrDCA],
     authors="Andrea Pagnani",
-    repo="https://github.com/pagnani/CorrDCA.jl/blob/{commit}{path}#L{line}",
+    repo="https://github.com/pagnani/CorrDCA/blob/{commit}{path}#L{line}",
     sitename="CorrDCA",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
