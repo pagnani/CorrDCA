@@ -18,5 +18,7 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/pagnani/CorrDCA",
+    branch = "gh-pages",
+	repo = "github.com/pagnani/CorrDCA.git",
+    versions = ["stable" => "v^"]
 )
