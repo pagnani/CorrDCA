@@ -30,14 +30,14 @@ in `Z`.
 function compute_weights(Z::Matrix{Ti}, theta::Real) where Ti <: Integer
     N, M = size(Z)
     thresh = floor(N * theta)
-    W = ones(M) |> SharedArray
+    #W = ones(M) |> SharedArray
+    W = zeros(M) |> SharedArray
     #sZ = SharedArray(Z)
-    @sync @distributed for i in 1:M - 1
-        for j in i + 1:M
+    @sync @distributed for i in 1:M
+        @simd for j in 1:M
             dij = coldist(Z,i,j,N)
             val = (dij < thresh)
             W[i] += val
-            W[j] += val
         end
     end
     
@@ -60,4 +60,3 @@ function compute_weights(Z::Matrix{Ti}, theta::Symbol) where Ti<:Integer
     thr = compute_theta(Z)
     return compute_weights(Z,thr)
 end
-
