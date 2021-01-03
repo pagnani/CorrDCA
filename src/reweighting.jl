@@ -43,6 +43,7 @@ function compute_weights(Z::Matrix{Ti}, theta::Real) where Ti <: Integer
         W[i] = 1.0 / W[i]
     end
     Meff = sum(W)
+    println("M = $M N = $N Meff = $Meff theta = $theta")
     return sdata(W)./Meff , Meff
 end
 
