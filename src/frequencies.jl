@@ -81,4 +81,4 @@ function covariance_matrix(Z, W; pc::Real=0)
     return Cij(Pi,Pij)
 end
 
-covariance_matrix(Z; kwds...) = covariance_matrix(Z,1.0/size(Z,2); kwds...)
+covariance_matrix(Z; kwds...) = covariance_matrix(Z,ones(size(Z,2))/size(Z,2); kwds...)
