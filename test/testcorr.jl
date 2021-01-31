@@ -5,11 +5,14 @@ datadir = joinpath(dirname(@__FILE__),"data")
 filePijtrue = joinpath(datadir,"Pij.dat")
 filePitrue = joinpath(datadir,"Pi.dat")
 fileal = joinpath(datadir,"pf14short.fasta.gz")
+filecov = joinpath(datadir,"covariance.dat")
 Z = read_fasta_alignment(fileal,0.8)[1:3,1:100]
 Pijtrue = readdlm(filePijtrue)
 Pitrue = readdlm(filePitrue)
+Cijtrue = readdlm(filecov) # covariance matrix with pc = 0.1
 W,Meff = compute_weights(Z,:auto)
 Pij,Pi = Pij,Pi=compute_frequencies(Z,W)
+Cij,mi = covariance_matrix(Z,W,pc=0.1)
 q  = maximum(Z)
 N  = size(Z,1)
 s = q-1
@@ -34,6 +37,8 @@ for i in 1:N
         @test Pijpc[a,a,i,i] ≈ Pipc[a,i]
     end
 end
+
+@test Cijtrue ≈ Cij
 
 printstyled("All TestCorr passed!\n",color=:light_green,bold=true)
 end # end module
