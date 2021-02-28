@@ -5,6 +5,12 @@
 [![Build Status](https://github.com/pagnani/CorrDCA/workflows/CI/badge.svg)](https://github.com/pagnani/CorrDCA/actions)
 [![Coverage](https://codecov.io/gh/pagnani/CorrDCA/branch/main/graph/badge.svg)](https://codecov.io/gh/pagnani/CorrDCA)
 
+## Warning
+
+DISCONTINUED in favor of [DCAUtils.jl](https://github.com/carlobaldassi/DCAUtils.jl)
+
+## Intro
+
 Simple package that:
 
 * Reads FASTA files and translate it in a numerical matrix
